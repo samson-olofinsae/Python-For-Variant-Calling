@@ -4,6 +4,7 @@ relative to the reference sequence. While typically written in bash script, the 
 The pipeline employs an inital software-like user friendly interface which checks that the right file naming convention compatible with the pipeline is used by the user.
 
 The pipeline uses the following python modules for its processing: os, glob, os.path and subprocess ( importing call).
+The pipeline is able to process multiple samples (HPC server recommended).
 
 From input fastq files, the pipeline generates VCF files, and also filters the files to seperately generate indels and snv VCFs. 
 VCF file filtering is an essential step added for researh purpose. For instance, concatenation of indels and snvs variants from tumour samples may be used as inputs in the pipeline for generating mutation table used in somatic cancer driver analysis that employs Non Synonymous:Synonymous mutation ratio (Martincorena, et al., 2017)
