@@ -6,9 +6,31 @@ The pipeline employs an inital software-like user friendly interface which check
 The pipeline uses the following python modules for its processing: os, glob, os.path and subprocess ( importing call).
 The pipeline is able to process multiple samples (HPC server recommended).
 
+The pipeline generates outputs in the user's working directory using the following folder and structure:
+
+results/
+├── bam
+│   ├── sample.aligned.bam
+│   ├── sample.aligned.sorted.bam
+│   └── sample.aligned.sorted.bam.bai
+├── bcf
+│   └── sample_raw.bcf
+├── sam
+│   └── sample.aligned.sam
+└── vcf
+    ├── sample_variants.vcf
+    ├── indels
+    │   └── samplle_indels.vcf.gz
+    └── snvs
+        └── sample_snvs.vcf.gz
+
 From input fastq files, the pipeline generates VCF files, and also filters the files to seperately generate indels and snv VCFs. 
 VCF file filtering is an essential step added for researh purpose. For instance, concatenation of indels and snvs variants from tumour samples may be used as inputs in the pipeline for generating mutation table used in somatic cancer driver analysis that employs Non Synonymous:Synonymous mutation ratio (Martincorena, et al., 2017)
 
 Reference
 
 Martincorena I, Raine KM, Gerstung M, Dawson KJ, Haase K, Van Loo P, Davies H, Stratton MR, Campbell PJ. Universal Patterns of Selection in Cancer and Somatic Tissues. Cell. 2017 Nov 16;171(5):1029-1041.e21. doi: 10.1016/j.cell.2017.09.042. Epub 2017 Oct 19. Erratum in: Cell. 2018 Jun 14;173(7):1823. PMID: 29056346; PMCID: PMC5720395.
+
+
+
+
