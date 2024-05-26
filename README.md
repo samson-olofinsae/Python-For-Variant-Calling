@@ -6,7 +6,7 @@ pipeline because of its powerful functionalities that enable developers to track
 The pipeline uses the following python modules for its processing: os, glob, os.path and subprocess ( importing call).
 
 From input fastq files, the pipeline generates VCF files, and also filters the files to seperately generate indels and snv VCFs. 
-VCF file filtering is an essential step added for researh purpose. For instance, concatenation of indels and snvs variants from tumour samples may be used as inputs for generating mutation tables in somatic mutation used in cancer driver analysis that employs Non Synonymous:Synonymous mutation ratio (Martincorena, et al., 2017)
+VCF file filtering is an essential step added for researh purpose. For instance, concatenation of indels and snvs variants from tumour samples may be used as inputs in the pipeline for generating mutation table used in somatic cancer driver analysis that employs Non Synonymous:Synonymous mutation ratio (Martincorena, et al., 2017)
 
 Reference
 
