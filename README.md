@@ -1,7 +1,7 @@
 # Python-For-Variant-Calling
 Variant calling is an essential downstream analysis in Next Generation Sequencing analysis. Filtering variants in sequenced DNA samples is an essential process towards determining variations in the samples
 relative to the reference sequence. While typically written in bash script, the pipeline script in this repo is coded in Python (filename: variant-caller.py), which is the chosen programming language for this pipeline because of its powerful functionalities that enable developers to track bugs, unit-test codes, build control and automation.
-The pipeline employs an inital software-like user friendly interface which checks that the right file naming convention compatible with the pipeline is used by user.
+The pipeline employs an inital software-like user friendly interface which checks that the right file naming convention compatible with the pipeline is used by the user.
 
 The pipeline uses the following python modules for its processing: os, glob, os.path and subprocess ( importing call).
 
