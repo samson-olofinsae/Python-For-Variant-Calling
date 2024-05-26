@@ -6,7 +6,7 @@ The pipeline employs an inital software-like user friendly interface which check
 The pipeline uses the following python modules for its processing: os, glob, os.path and subprocess ( importing call).
 The pipeline is able to process multiple samples (HPC server recommended).
 
-The pipeline generates outputs in the user's working directory using the following folder and structure:
+The pipeline generates outputs in the user's working directory using the following folder and file structure (aslo attached as filename: Folder_structure.txt):
 
 results/
 ├── bam
