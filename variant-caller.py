@@ -1,4 +1,4 @@
-########### This pipeline works with unzipped reference genome file
+########### This software works with unzipped reference genome file
 
 import subprocess
 import os
@@ -6,7 +6,7 @@ import glob
 import os.path
 from subprocess import call
 
-# Intial User interface
+# Initial User interface
 
 print ("Accepted format for fastq files is _(R1,R2).fastq.gz")
 q = input ('Is your input fastq file in this format? enter y for Yes or n for No: ')
@@ -15,6 +15,7 @@ if q == 'y':
 elif q == 'n':
     print ('Please tranform your fastq file to the recommended format and restart the programme')
     quit()
+
 wd = os.getcwd()
 
 print (f'Your working directory: {wd}')
@@ -85,19 +86,19 @@ for fq1 in os.path.join (wd, '*_R1.fastq.gz'):
         indels = os.path.join (wd, 'results', 'vcf', 'indels', base_indel)
         snvs = os.path.join (wd, 'results', 'vcf', 'snvs', base_snv)
 
-    
 
 
-    for command in (f"bwa mem {ref_genome_file_path} {fq1} {fq2} > {sam}", 
-                    f"samtools view -S -b {sam} > {bam}",
-                    f"samtools sort -o {sorted_bam} {bam}",
-                    f"samtools index {sorted_bam}", 
-                    f"bcftools mpileup -O b -o {raw_bcf} -f {ref_genome_file_path} {sorted_bam}",
-                    f"bcftools call --ploidy 1 -m -v -o {variants} {raw_bcf}",
-                    f"bgzip {final_variants}",
-                    f"bcftools index {indexed_variants}",
-                    f"bcftools view -v snps {indexed_variants} > {snvs}",
-                    f"bcftools view -v indels {indexed_variants} > {indels}"):
-                    
+        for command in (f"bwa mem {ref_genome_file_path} {fq1} {fq2} > {sam}", 
+                        f"samtools view -S -b {sam} > {bam}",
+                        f"samtools sort -o {sorted_bam} {bam}",
+                        f"samtools index {sorted_bam}", 
+                        f"bcftools mpileup -O b -o {raw_bcf} -f {ref_genome_file_path} {sorted_bam}",
+                        f"bcftools call --ploidy 1 -m -v -o {variants} {raw_bcf}",
+                        f"bgzip {final_variants}",
+                        f"bcftools index {indexed_variants}",
+                        f"bcftools view -v snps {indexed_variants} > {snvs}",
+                        f"bcftools view -v indels {indexed_variants} > {indels}"):
+              
 
-        call(command, shell=True) 
+              
+            call(command, shell=True) 
