@@ -46,6 +46,7 @@ output_folder = ['sam', 'bam', 'bcf', 'vcf']
 for folder in output_folder:
     os.mkdir(folder)
 
+# making indels and snv subfolders
 os.chdir('vcf')
 variant_folder = ['indels', 'snvs']
 for variant in variant_folder:
