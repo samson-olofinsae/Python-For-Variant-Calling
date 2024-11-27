@@ -1,4 +1,5 @@
 ########### This software works with unzipped reference genome file
+# if your ref file is zipped, unzip with gunzip your_file.gz
 
 import subprocess
 import os
