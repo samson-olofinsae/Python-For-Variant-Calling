@@ -43,7 +43,7 @@ os.mkdir ('results')
 os.chdir('results')
 
 
-output_folder = ['sam', 'bam', 'bcf', 'vcf']
+output_folder = ['bam', 'bcf', 'vcf']
 for folder in output_folder:
     os.mkdir(folder)
 
@@ -78,7 +78,6 @@ for fq1 in os.path.join (wd, '*_R1.fastq.gz'):
 
         fq1 = os.path.join (wd, base_R1)
         fq2 = os.path.join (wd, base_R2)
-        sam = os.path.join (wd, 'results', 'sam', base_sam)
         bam = os.path.join (wd,'results', 'bam', base_bam)
         sorted_bam = os.path.join (wd,'results', 'bam', base_sorted_bam)
         raw_bcf = os.path.join (wd,'results','bcf', base_bcf)
@@ -90,9 +89,7 @@ for fq1 in os.path.join (wd, '*_R1.fastq.gz'):
 
 
 
-        for command in (f"bwa mem {ref_genome_file_path} {fq1} {fq2} > {sam}", 
-                        f"samtools view -S -b {sam} > {bam}",
-                        f"samtools sort -o {sorted_bam} {bam}",
+        for command in (f"bwa mem {ref_genome_file} {fq1} {fq2} | samtools sort -o {sorted_bam}", 
                         f"samtools index {sorted_bam}", 
                         f"bcftools mpileup -O b -o {raw_bcf} -f {ref_genome_file_path} {sorted_bam}",
                         f"bcftools call --ploidy 1 -m -v -o {variants} {raw_bcf}",
