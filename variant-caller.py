@@ -33,7 +33,6 @@ print (f'Your fastq file path is {fastq_file_path}')
 
 indexing = subprocess.run (["bwa", "index", ref_genome_file_path], capture_output=True)
 
-
 # Creating the outut folders and subfolders
 
 os.mkdir ('results')
