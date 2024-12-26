@@ -39,7 +39,6 @@ os.mkdir ('results')
 
 os.chdir('results')
 
-
 output_folder = ['bam', 'bcf', 'vcf']
 for folder in output_folder:
     os.mkdir(folder)
