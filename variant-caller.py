@@ -89,7 +89,7 @@ for fq1 in os.path.join (wd, '*_R1.fastq.gz'):
                         f"bgzip {final_variants}",
                         f"bcftools index {indexed_variants}",
                         f"bcftools view -v snps {indexed_variants} > {snvs}",
-                        f"bcftools view -v indels {indexed_variants} > {indels}"):              
+                        f"bcftools view -v indels {indexed_variants} > {indels}"):            
 
               
             call(command, shell=True) 
