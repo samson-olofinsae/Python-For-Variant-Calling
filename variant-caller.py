@@ -81,7 +81,6 @@ for fq1 in os.path.join (wd, '*_R1.fastq.gz'):
         snvs = os.path.join (wd, 'results', 'vcf', 'snvs', base_snv)
 
 
-
         for command in (f"bwa mem {ref_genome_file} {fq1} {fq2} | samtools sort -o {sorted_bam}", 
                         f"samtools index -b {sorted_bam}", 
                         f"bcftools mpileup -O b -o {raw_bcf} -f {ref_genome_file_path} {sorted_bam}",
