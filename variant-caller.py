@@ -7,7 +7,7 @@ import glob
 import os.path
 from subprocess import call
 
-# Initialling User interface command and input
+## Initialling User interface command and input
 
 print ("Accepted format for fastq files is _(R1,R2).fastq.gz")
 q = input ('Is your input fastq file in this format? enter y for Yes or n for No: ')
