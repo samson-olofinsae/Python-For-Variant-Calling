@@ -71,6 +71,7 @@ for fq1 in os.path.join (wd, '*_R1.fastq.gz'):
         base_final_variant = base + '_final_variants.vcf'
         base_indel = base + '_indels.vcf.gz'
         base_snv = base + '_snvs.vcf.gz'
+        
 
         fq1 = os.path.join (wd, base_R1)
         fq2 = os.path.join (wd, base_R2)
