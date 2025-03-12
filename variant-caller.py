@@ -17,7 +17,6 @@ elif q == 'n':
     print ('Please tranform your fastq file to the recommended format and restart the programme')
     quit()
 
-
 wd = os.getcwd()
 
 print (f'Your working directory: {wd}')
